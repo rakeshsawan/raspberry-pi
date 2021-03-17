@@ -1,3 +1,0 @@
-arm32 is a replica of https://adamransom.github.io/posts/raspberry-pi-bare-metal-part-1.html
-arm64 is modified version of arm32 code, primarly changed the registers from r0,r1 to x1,x2 and updated kernel.ld to load
-the kernel at the appropriate memory location.

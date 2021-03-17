@@ -8,7 +8,7 @@ BUILD = build/
 SOURCE = src/
 
 # Name of the target
-TARGET_NAME = kernel
+TARGET_NAME = kernel8
 
 # Name of the file to output
 TARGET = kernel.img
