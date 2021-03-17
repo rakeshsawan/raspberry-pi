@@ -3,11 +3,10 @@
 #include "os_types.h"
 
 //Ensure the array is 16 bit aligned.
-//volatile uint32_t __attribute__((aligned(16))) mailbox_messages[MAILBOX_MESSAGE_MAX];
-volatile uint32_t  mailbox_messages[MAILBOX_MESSAGE_MAX];
+volatile uint32_t __attribute__((aligned(16))) mailbox_messages[MAILBOX_MESSAGE_MAX];
 mbox_t *mailbox= ((mbox_t *) (MAILBOX_ADDRESS));
 
-//The mailbox message should have last 4 bit contain the channel number
+//The mailbox message should have lower 4 bit contain the channel number
 //and the remaining 28 bits should have the buffer address.
 uint32_t create_mailbox_message(uint32_t message, uchar_t channel)
 {
