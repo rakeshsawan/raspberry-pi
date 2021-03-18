@@ -57,6 +57,7 @@ extern mbox_t *mailbox;
 #define MAILBOX_RESPONSE_ERROR 0x80000001
 
 
-short mailbox_send(uint32_t  message, uchar_t channel);
+uint32_t mailbox_send(uint32_t  message, uchar_t channel);
+uint32_t mailbox_read(uchar_t channel);
 
 #endif 

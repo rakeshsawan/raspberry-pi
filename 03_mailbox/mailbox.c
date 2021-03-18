@@ -21,13 +21,13 @@ uint32_t create_mailbox_message(uint32_t message, uchar_t channel)
 
 	return message;
 }
-short mailbox_send(uint32_t  message, uchar_t channel)
+uint32_t mailbox_send(uint32_t  message, uchar_t channel)
 {
 	message = create_mailbox_message(message, channel);
 
 	while(mailbox->status == MAIL_FULL);
 	mailbox->write = message;
-	return 0;
+	return mailbox_read(channel);
 }
 /**
  * This method reads the message from mailbox
