@@ -4,7 +4,7 @@
 
 _start:
 	mrs x0,mpidr_el1 //Load the current processor id
-	and x0,x0,#3 //Mask the bit belonging to core id
+	and x0,x0,#0xF //Mask the bit belonging to core id
 	cbz x0,master
 	sub x1,x0,#1 //Check for core id 1 and jump to label 1
 	cbz x1,1f 

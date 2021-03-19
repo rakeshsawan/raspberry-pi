@@ -144,8 +144,8 @@ void gpu_init(void) {
     // clear screen
     for (uint32_t j = 0; j < framebuffer.height; j++) {
         for (uint32_t i = 0; i < framebuffer.width; i++) {
-            //write_pixel(i,j,&BLACK);
-            write_pixel(i,j,&WHITE);
+            write_pixel(i,j,&BLACK);
+            //write_pixel(i,j,&WHITE);
         }
     }
 }

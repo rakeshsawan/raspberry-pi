@@ -10,18 +10,14 @@ void gpu_init();
 void kernel_proc0(void)
 {
 	uart_init();
-	uart_send_string("Hello, world - Core-0!\r\n");
+	uart_send_string("Booting OS - Core-0!\r\n");
 	get_framebuffer();
-	uart_send_string("Got framebuffer\n");
-	/*turn_on_led();
-	uart_send_string("Turned on led\n");*/
+//	uart_send_string("Got framebuffer\n");
+	turn_on_led();
+	//uart_send_string("Turned on led\n");
 	gpu_init();
-	gpu_putc('M'); 
-	gpu_putc('e'); 
-	gpu_putc('l'); 
-	gpu_putc('\n'); 
-	gpu_putc('H'); 
-	gpu_putc('i'); 
+	print_string("\nBooting OS\n");
+	print_string("\nFramebuffer address: ");
 	print_hex(mailbox_messages[28]);
 	/*while (1) {
 		uart_send(uart_recv());

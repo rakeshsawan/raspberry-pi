@@ -18,6 +18,12 @@ void memset(void * dest, uint8_t c, int bytes) {
         *d++ = c;
     }
 }
+void print_string(char* str)
+{
+	for (int i = 0; str[i] != '\0'; i ++) {
+		gpu_putc((char)str[i]);
+	}
+}
 
 /**
  * Display a binary value in hexadecimal
